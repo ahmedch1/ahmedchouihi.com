@@ -12,13 +12,13 @@ class HomeController extends AbstractController
     public function index(): Response
     {
         // Define your personal information
-        $name = "Your Name";
+        $name = "Ahmed Chouihi";
         $title = "PHP Developer";
         $about = "I'm a passionate PHP developer with expertise in building robust web applications and websites. With a strong foundation in backend development and database management, I create efficient and scalable solutions.";
         
         // Define your skills
         $skills = [
-            "PHP", "MySQL", "Laravel", "Symfony", "HTML5", "CSS3", 
+            "PHP", "MySQL","Magento", "Laravel", "Symfony", "HTML5", "CSS3", 
             "JavaScript", "jQuery", "REST APIs", "Git", "Docker", "AWS"
         ];
         
@@ -27,17 +27,20 @@ class HomeController extends AbstractController
             [
                 "title" => "E-commerce Platform",
                 "description" => "A full-featured online store built with PHP and MySQL. Includes user authentication, product management, shopping cart, and payment integration.",
-                "technologies" => "PHP, MySQL, JavaScript, PayPal API"
+                "technologies" => "PHP, MySQL, JavaScript, PayPal API",
+                "image" => "https://placehold.co/600x400.png?text=E-commerce"
             ],
             [
                 "title" => "Content Management System",
                 "description" => "A custom CMS for a media company that allows easy content creation, user management, and analytics tracking.",
-                "technologies" => "PHP, Laravel, MySQL, Vue.js"
+                "technologies" => "PHP, Laravel, MySQL, Vue.js",
+                "image" => "https://placehold.co/600x400.png?text=CMS"
             ],
             [
                 "title" => "Booking System",
                 "description" => "An appointment scheduling system for a healthcare provider with calendar integration and automated reminders.",
-                "technologies" => "PHP, Symfony, MySQL, jQuery, Google Calendar API"
+                "technologies" => "PHP, Symfony, MySQL, jQuery, Google Calendar API",
+                "image" => "https://placehold.co/600x400.png?text=Booking"
             ]
         ];
 
