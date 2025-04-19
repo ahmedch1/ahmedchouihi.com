@@ -31,6 +31,18 @@ class HomeController extends AbstractController
                 "image" => "https://placehold.co/600x400.png?text=E-commerce"
             ],
             [
+                "title" => "E-commerce Platform",
+                "description" => "A full-featured online store built with PHP and MySQL. Includes user authentication, product management, shopping cart, and payment integration.",
+                "technologies" => "PHP, MySQL, JavaScript, PayPal API",
+                "image" => "https://placehold.co/600x400.png?text=E-commerce"
+            ],
+            [
+                "title" => "E-commerce Platform",
+                "description" => "A full-featured online store built with PHP and MySQL. Includes user authentication, product management, shopping cart, and payment integration.",
+                "technologies" => "PHP, MySQL, JavaScript, PayPal API",
+                "image" => "https://placehold.co/600x400.png?text=E-commerce"
+            ],
+            [
                 "title" => "Content Management System",
                 "description" => "A custom CMS for a media company that allows easy content creation, user management, and analytics tracking.",
                 "technologies" => "PHP, Laravel, MySQL, Vue.js",
