@@ -12,6 +12,7 @@ This is a custom WordPress page template for showcasing your PHP development ski
 - **Project Gallery**: Visual showcase of your work with hover effects
 - **Client Reviews**: Testimonials from satisfied clients
 - **Company Collaborations**: Showcase of companies you've worked with
+- **Dark Mode Toggle**: Professional dark/light theme switching with preference saving
 
 ## How to Use
 
@@ -42,9 +43,9 @@ This is a custom WordPress page template for showcasing your PHP development ski
 ### Personal Information
 Update the hero section in `page-portfolio.blade.php`:
 ```php
-<h1 class="text-5xl font-bold text-gray-900 mb-4 hero-title">Your Name</h1>
-<p class="text-xl text-gray-600 mb-6">Your Title</p>
-<p class="text-lg text-gray-700 max-w-2xl mx-auto leading-relaxed">
+<h1 class="text-5xl font-bold text-gray-900 dark:text-white mb-4 hero-title">Your Name</h1>
+<p class="text-xl text-gray-600 dark:text-gray-300 mb-6">Your Title</p>
+<p class="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
   Your personal description here...
 </p>
 ```
@@ -89,6 +90,32 @@ Update the contact section with your real contact details:
 - GitHub profile
 - LinkedIn profile
 
+## Dark Mode Feature
+
+The portfolio includes a professional dark mode toggle:
+
+### How it Works
+- **Toggle Button**: Fixed position in the top-right corner
+- **Icon Changes**: Sun icon in dark mode, moon icon in light mode
+- **Preference Saving**: User's choice is saved in localStorage
+- **Smooth Transitions**: All color changes are animated
+
+### Dark Mode Styling
+- **Background**: Dark gray gradients instead of light blue
+- **Text**: White/light gray text on dark backgrounds
+- **Cards**: Dark gray backgrounds with proper contrast
+- **Buttons**: Adjusted colors for dark theme
+- **Borders**: Darker borders for better visibility
+
+### Customization
+To modify dark mode colors, update the `dark:` classes in the template:
+```html
+<!-- Example: Change dark background color -->
+<div class="bg-white dark:bg-gray-800">
+  <!-- Content -->
+</div>
+```
+
 ## Styling
 
 The template uses Tailwind CSS classes and custom CSS in `resources/css/app.css`. You can:
@@ -98,6 +125,7 @@ The template uses Tailwind CSS classes and custom CSS in `resources/css/app.css`
 - Add custom animations
 - Update the gradient backgrounds
 - Customize hover effects for gallery, reviews, and company logos
+- Modify dark mode color schemes
 
 ## Build Process
 
@@ -113,6 +141,7 @@ yarn build
 - Modern browsers (Chrome, Firefox, Safari, Edge)
 - Mobile browsers
 - Responsive design for all screen sizes
+- Dark mode support in all modern browsers
 
 ## Notes
 
@@ -121,4 +150,6 @@ yarn build
 - The design is professional and suitable for developer portfolios
 - Smooth scrolling is enabled for navigation links
 - Gallery images have fallback placeholders if files are missing
-- Company logos start in grayscale and become colored on hover 
+- Company logos start in grayscale and become colored on hover
+- Dark mode preference is automatically saved and restored
+- All sections are fully responsive and work in both light and dark modes 
