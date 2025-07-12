@@ -142,8 +142,231 @@
     </div>
   </section>
 
-  <!-- Experience Section -->
+  <!-- Gallery Section -->
+  <section id="gallery" class="py-16 px-4 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Project Gallery</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="group relative overflow-hidden rounded-lg shadow-lg gallery-item">
+          <img src="{{ get_theme_file_uri('resources/images/project1.jpg') }}" 
+               alt="E-Commerce Platform" 
+               class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+               onerror="this.src='https://via.placeholder.com/400x300/3B82F6/FFFFFF?text=E-Commerce'">
+          <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+            <div class="text-center text-white">
+              <h3 class="text-xl font-semibold mb-2">E-Commerce Platform</h3>
+              <p class="text-sm">Laravel • Vue.js • MySQL</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="group relative overflow-hidden rounded-lg shadow-lg gallery-item">
+          <img src="{{ get_theme_file_uri('resources/images/project2.jpg') }}" 
+               alt="Task Management App" 
+               class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+               onerror="this.src='https://via.placeholder.com/400x300/10B981/FFFFFF?text=Task+App'">
+          <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+            <div class="text-center text-white">
+              <h3 class="text-xl font-semibold mb-2">Task Management App</h3>
+              <p class="text-sm">PHP • Redis • WebSocket</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="group relative overflow-hidden rounded-lg shadow-lg gallery-item">
+          <img src="{{ get_theme_file_uri('resources/images/project3.jpg') }}" 
+               alt="WordPress Theme" 
+               class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+               onerror="this.src='https://via.placeholder.com/400x300/8B5CF6/FFFFFF?text=WordPress'">
+          <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+            <div class="text-center text-white">
+              <h3 class="text-xl font-semibold mb-2">WordPress Theme</h3>
+              <p class="text-sm">WordPress • PHP • Tailwind</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="group relative overflow-hidden rounded-lg shadow-lg gallery-item">
+          <img src="{{ get_theme_file_uri('resources/images/project4.jpg') }}" 
+               alt="Analytics Dashboard" 
+               class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+               onerror="this.src='https://via.placeholder.com/400x300/F59E0B/FFFFFF?text=Analytics'">
+          <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+            <div class="text-center text-white">
+              <h3 class="text-xl font-semibold mb-2">Analytics Dashboard</h3>
+              <p class="text-sm">Laravel • Chart.js • API</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="group relative overflow-hidden rounded-lg shadow-lg gallery-item">
+          <img src="{{ get_theme_file_uri('resources/images/project5.jpg') }}" 
+               alt="Mobile App" 
+               class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+               onerror="this.src='https://via.placeholder.com/400x300/EF4444/FFFFFF?text=Mobile+App'">
+          <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+            <div class="text-center text-white">
+              <h3 class="text-xl font-semibold mb-2">Mobile App</h3>
+              <p class="text-sm">React Native • Node.js • MongoDB</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="group relative overflow-hidden rounded-lg shadow-lg gallery-item">
+          <img src="{{ get_theme_file_uri('resources/images/project6.jpg') }}" 
+               alt="API Service" 
+               class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+               onerror="this.src='https://via.placeholder.com/400x300/06B6D4/FFFFFF?text=API+Service'">
+          <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+            <div class="text-center text-white">
+              <h3 class="text-xl font-semibold mb-2">API Service</h3>
+              <p class="text-sm">Laravel • PostgreSQL • Docker</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews Section -->
+  <section id="reviews" class="py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Client Reviews</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow-lg review-card">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+              <span class="text-blue-600 font-semibold text-lg">JD</span>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900">John Doe</h4>
+              <p class="text-sm text-gray-600">CEO, TechStart Inc.</p>
+            </div>
+          </div>
+          <div class="flex text-yellow-400 mb-3">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+              <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+            </svg>
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+              <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+            </svg>
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+              <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+            </svg>
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+              <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+            </svg>
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+              <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+            </svg>
+          </div>
+          <p class="text-gray-700 italic">"Ahmed delivered an exceptional e-commerce platform that exceeded our expectations. His attention to detail and technical expertise made the entire process smooth and professional."</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-lg review-card">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+              <span class="text-green-600 font-semibold text-lg">SM</span>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900">Sarah Miller</h4>
+              <p class="text-sm text-gray-600">Product Manager, InnovateCorp</p>
+            </div>
+          </div>
+          <div class="flex text-yellow-400 mb-3">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+              <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+            </svg>
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+              <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+            </svg>
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+              <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+            </svg>
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+              <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+            </svg>
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+              <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+            </svg>
+          </div>
+          <p class="text-gray-700 italic">"Working with Ahmed was a pleasure. He built our task management app with real-time features that our team loves. Highly recommended for any complex web application."</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-lg review-card">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4">
+              <span class="text-purple-600 font-semibold text-lg">MJ</span>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900">Mike Johnson</h4>
+              <p class="text-sm text-gray-600">Founder, DigitalAgency</p>
+            </div>
+          </div>
+          <div class="flex text-yellow-400 mb-3">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+              <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+            </svg>
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+              <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+            </svg>
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+              <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+            </svg>
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+              <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+            </svg>
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+              <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+            </svg>
+          </div>
+          <p class="text-gray-700 italic">"Ahmed created a stunning WordPress theme for our agency. The design is modern, the code is clean, and the performance is outstanding. Perfect partner for web development projects."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proud to Collaborate With Section -->
   <section class="py-16 px-4 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Proud to Collaborate With</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center">
+        <div class="flex items-center justify-center p-4 company-logo">
+          <div class="w-24 h-16 bg-gray-100 rounded-lg flex items-center justify-center">
+            <span class="text-gray-600 font-semibold text-sm">TechCorp</span>
+          </div>
+        </div>
+        <div class="flex items-center justify-center p-4 company-logo">
+          <div class="w-24 h-16 bg-gray-100 rounded-lg flex items-center justify-center">
+            <span class="text-gray-600 font-semibold text-sm">InnovateLab</span>
+          </div>
+        </div>
+        <div class="flex items-center justify-center p-4 company-logo">
+          <div class="w-24 h-16 bg-gray-100 rounded-lg flex items-center justify-center">
+            <span class="text-gray-600 font-semibold text-sm">DigitalFlow</span>
+          </div>
+        </div>
+        <div class="flex items-center justify-center p-4 company-logo">
+          <div class="w-24 h-16 bg-gray-100 rounded-lg flex items-center justify-center">
+            <span class="text-gray-600 font-semibold text-sm">WebCraft</span>
+          </div>
+        </div>
+        <div class="flex items-center justify-center p-4 company-logo">
+          <div class="w-24 h-16 bg-gray-100 rounded-lg flex items-center justify-center">
+            <span class="text-gray-600 font-semibold text-sm">CodeStudio</span>
+          </div>
+        </div>
+        <div class="flex items-center justify-center p-4 company-logo">
+          <div class="w-24 h-16 bg-gray-100 rounded-lg flex items-center justify-center">
+            <span class="text-gray-600 font-semibold text-sm">DevHub</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section class="py-16 px-4">
     <div class="max-w-4xl mx-auto">
       <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Experience</h2>
       <div class="space-y-8">
@@ -188,7 +411,7 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="py-16 px-4">
+  <section id="contact" class="py-16 px-4 bg-white">
     <div class="max-w-4xl mx-auto text-center">
       <h2 class="text-3xl font-bold text-gray-900 mb-8">Let's Work Together</h2>
       <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">

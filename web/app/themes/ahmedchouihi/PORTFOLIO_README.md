@@ -9,6 +9,9 @@ This is a custom WordPress page template for showcasing your PHP development ski
 - **Smooth Animations**: Hover effects and transitions for better UX
 - **Mobile Responsive**: Optimized for all device sizes
 - **SEO Friendly**: Proper semantic HTML structure
+- **Project Gallery**: Visual showcase of your work with hover effects
+- **Client Reviews**: Testimonials from satisfied clients
+- **Company Collaborations**: Showcase of companies you've worked with
 
 ## How to Use
 
@@ -26,10 +29,13 @@ This is a custom WordPress page template for showcasing your PHP development ski
      - Project details
      - Work experience
      - Contact information
+     - Client reviews
+     - Company collaborations
 
-3. **Add Your Avatar**:
+3. **Add Your Images**:
    - Place your profile photo as `avatar.jpg` in the `resources/images/` directory
-   - The image will automatically display in the hero section
+   - Add project screenshots as `project1.jpg`, `project2.jpg`, etc. in the same directory
+   - The images will automatically display in the hero and gallery sections
 
 ## Customization
 
@@ -55,6 +61,25 @@ Update the project cards with your actual projects:
 - Technologies used (tags)
 - Project links
 
+### Gallery Section
+The gallery section displays 6 project images with hover effects:
+- Add your project screenshots to `resources/images/`
+- Update the image sources and project descriptions
+- Each image has a fallback placeholder if the file doesn't exist
+
+### Reviews Section
+Update the client testimonials:
+- Client names and positions
+- Company names
+- Review content
+- Star ratings (5-star system)
+
+### Company Collaborations
+Showcase companies you've worked with:
+- Replace placeholder company names with real ones
+- Add actual company logos to the `resources/images/` directory
+- Update the company names in the template
+
 ### Experience
 Edit the work experience section with your actual job history.
 
@@ -72,6 +97,7 @@ The template uses Tailwind CSS classes and custom CSS in `resources/css/app.css`
 - Adjust spacing and layout
 - Add custom animations
 - Update the gradient backgrounds
+- Customize hover effects for gallery, reviews, and company logos
 
 ## Build Process
 
@@ -93,4 +119,6 @@ yarn build
 - The template is designed to be a single-page portfolio
 - All content is static and can be easily customized
 - The design is professional and suitable for developer portfolios
-- Smooth scrolling is enabled for navigation links 
+- Smooth scrolling is enabled for navigation links
+- Gallery images have fallback placeholders if files are missing
+- Company logos start in grayscale and become colored on hover 

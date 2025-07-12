@@ -33,6 +33,37 @@ html {
   transform: scale(1.05);
 }
 
+/* Gallery items */
+.gallery-item {
+  transition: all 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Review cards */
+.review-card {
+  transition: all 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Company logos */
+.company-logo {
+  transition: all 0.3s ease;
+  filter: grayscale(100%);
+}
+
+.company-logo:hover {
+  filter: grayscale(0%);
+  transform: scale(1.1);
+}
+
 /* Custom animations */
 @keyframes fadeInUp {
   from {
