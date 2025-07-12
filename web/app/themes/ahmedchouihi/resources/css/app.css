@@ -33,6 +33,16 @@ html {
   transform: scale(1.05);
 }
 
+/* Language cards */
+.language-card {
+  transition: all 0.3s ease;
+}
+
+.language-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
 /* Gallery items */
 .gallery-item {
   transition: all 0.3s ease;
