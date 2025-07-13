@@ -1,6 +1,14 @@
 <?php
 
 use App\Blocks\HeroBlock;
+use App\Blocks\SkillsBlock;
+use App\Blocks\LanguagesBlock;
+use App\Blocks\ProjectsBlock;
+use App\Blocks\GalleryBlock;
+use App\Blocks\ReviewsBlock;
+use App\Blocks\PartnersBlock;
+use App\Blocks\ExperienceBlock;
+use App\Blocks\ContactBlock;
 
 /**
  * Register custom block category
@@ -15,24 +23,52 @@ add_filter('block_categories_all', function ($categories) {
 });
 
 /**
- * Register Hero Block
+ * Register All Portfolio Blocks
  */
 add_action('init', function() {
-    $heroBlock = new HeroBlock();
-    $heroBlock->register();
+    $blocks = [
+        new HeroBlock(),
+        new SkillsBlock(),
+        new LanguagesBlock(),
+        new ProjectsBlock(),
+        new GalleryBlock(),
+        new ReviewsBlock(),
+        new PartnersBlock(),
+        new ExperienceBlock(),
+        new ContactBlock(),
+    ];
+
+    foreach ($blocks as $block) {
+        $block->register();
+    }
 });
 
 /**
  * Enqueue block editor assets
  */
 add_action('enqueue_block_editor_assets', function() {
-    wp_enqueue_script(
-        'portfolio-hero-block',
-        get_theme_file_uri('/public/js/hero-block.js'),
-        ['wp-blocks', 'wp-element', 'wp-editor', 'wp-components', 'wp-i18n'],
-        '1.0.0',
-        true
-    );
+    // Enqueue all block editor scripts
+    $blocks = [
+        'hero' => 'portfolio-hero-block',
+        'skills' => 'portfolio-skills-block',
+        'languages' => 'portfolio-languages-block',
+        'projects' => 'portfolio-projects-block',
+        'gallery' => 'portfolio-gallery-block',
+        'reviews' => 'portfolio-reviews-block',
+        'partners' => 'portfolio-partners-block',
+        'experience' => 'portfolio-experience-block',
+        'contact' => 'portfolio-contact-block',
+    ];
+
+    foreach ($blocks as $block => $handle) {
+        wp_enqueue_script(
+            $handle,
+            get_theme_file_uri("/public/js/{$block}-block.js"),
+            ['wp-blocks', 'wp-element', 'wp-editor', 'wp-components', 'wp-i18n'],
+            '1.0.0',
+            true
+        );
+    }
 });
 
 /**

@@ -3,38 +3,136 @@
 namespace App\Blocks;
 
 /**
- * Languages Block
+ * Languages Block - Simple version with ACF Free
  */
-class LanguagesBlock extends BaseBlock
+class LanguagesBlock
 {
     /**
-     * The block name.
-     *
-     * @var string
+     * Register the block
      */
-    protected $name = 'languages';
+    public function register()
+    {
+        // Register block using WordPress native register_block_type
+        register_block_type('portfolio/languages', [
+            'title' => 'Languages Section',
+            'description' => 'Portfolio languages section with programming and human languages',
+            'category' => 'portfolio',
+            'icon' => 'translation',
+            'keywords' => ['languages', 'portfolio', 'programming', 'human'],
+            'supports' => [
+                'align' => false,
+                'anchor' => true,
+                'customClassName' => false,
+            ],
+            'attributes' => [
+                'sectionTitle' => [
+                    'type' => 'string',
+                    'default' => 'Languages',
+                ],
+                'programmingLanguagesData' => [
+                    'type' => 'array',
+                    'default' => [
+                        [
+                            'name' => 'PHP',
+                            'level' => 'Expert',
+                            'percentage' => 95,
+                            'color' => '#777BB4'
+                        ],
+                        [
+                            'name' => 'JavaScript',
+                            'level' => 'Advanced',
+                            'percentage' => 85,
+                            'color' => '#F7DF1E'
+                        ],
+                        [
+                            'name' => 'SQL',
+                            'level' => 'Advanced',
+                            'percentage' => 90,
+                            'color' => '#336791'
+                        ]
+                    ],
+                ],
+                'humanLanguagesData' => [
+                    'type' => 'array',
+                    'default' => [
+                        [
+                            'language' => 'Arabic',
+                            'level' => 'Native',
+                            'percentage' => 100
+                        ],
+                        [
+                            'language' => 'English',
+                            'level' => 'Professional',
+                            'percentage' => 90
+                        ],
+                        [
+                            'language' => 'French',
+                            'level' => 'Intermediate',
+                            'percentage' => 75
+                        ]
+                    ],
+                ],
+            ],
+            'render_callback' => [$this, 'render'],
+            'editor_script' => 'portfolio-languages-block',
+        ]);
+    }
 
     /**
-     * The block description.
-     *
-     * @var string
+     * Render the block
      */
-    protected $description = 'Portfolio languages section with language proficiency levels';
+    public function render($attributes, $content = '', $block = null)
+    {
+        // Extract attributes with defaults
+        $fields = [
+            'section_title' => $attributes['sectionTitle'] ?? 'Languages',
+            'programming_languages' => $attributes['programmingLanguagesData'] ?? [
+                [
+                    'name' => 'PHP',
+                    'level' => 'Expert',
+                    'percentage' => 95,
+                    'color' => '#777BB4'
+                ],
+                [
+                    'name' => 'JavaScript',
+                    'level' => 'Advanced',
+                    'percentage' => 85,
+                    'color' => '#F7DF1E'
+                ],
+                [
+                    'name' => 'SQL',
+                    'level' => 'Advanced',
+                    'percentage' => 90,
+                    'color' => '#336791'
+                ]
+            ],
+            'languages' => $attributes['humanLanguagesData'] ?? [
+                [
+                    'language' => 'Arabic',
+                    'level' => 'Native',
+                    'percentage' => 100
+                ],
+                [
+                    'language' => 'English',
+                    'level' => 'Professional',
+                    'percentage' => 90
+                ],
+                [
+                    'language' => 'French',
+                    'level' => 'Intermediate',
+                    'percentage' => 75
+                ]
+            ],
+        ];
 
-    /**
-     * The block icon.
-     *
-     * @var string
-     */
-    protected $icon = 'translation';
+        // Prepare context for the view
+        $context = [
+            'fields' => $fields,
+            'block' => $block,
+            'is_preview' => defined('REST_REQUEST') && REST_REQUEST,
+        ];
 
-    /**
-     * The block fields.
-     *
-     * @var array
-     */
-    protected $fields = [
-        'section_title' => 'Languages',
-        'languages' => [],
-    ];
+        // Render the view
+        return view('blocks.languages', $context)->render();
+    }
 } 

@@ -36,18 +36,6 @@ $projects = $fields['projects'] ?? [
         ],
         'link' => '#',
         'gradient' => 'from-purple-400 to-pink-500'
-    ],
-    [
-        'icon' => '📊',
-        'title' => 'Analytics Dashboard',
-        'description' => 'Real-time analytics dashboard with data visualization, reporting tools, and export functionality.',
-        'technologies' => [
-            ['technology' => 'Laravel'],
-            ['technology' => 'Chart.js'],
-            ['technology' => 'API']
-        ],
-        'link' => '#',
-        'gradient' => 'from-yellow-400 to-orange-500'
     ]
 ];
 ?>
@@ -65,11 +53,11 @@ $projects = $fields['projects'] ?? [
           <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">{{ $project['title'] }}</h3>
           <p class="text-gray-600 dark:text-gray-300 mb-4">{{ $project['description'] }}</p>
           <div class="flex flex-wrap gap-2 mb-4">
-            @if(isset($project['technologies']))
+            @if(isset($project['technologies']) && is_array($project['technologies']))
               @foreach($project['technologies'] as $tech)
-              <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-sm rounded-full">
-                {{ $tech['technology'] ?? $tech }}
-              </span>
+                <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-sm rounded-full">
+                  {{ is_array($tech) ? ($tech['technology'] ?? $tech) : $tech }}
+                </span>
               @endforeach
             @endif
           </div>

@@ -8,23 +8,34 @@ $show_contact_form = $fields['show_contact_form'] ?? false;
 
 <section id="contact" class="py-16 px-4 bg-white dark:bg-gray-800">
   <div class="max-w-4xl mx-auto text-center">
-    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">{{ $section_title }}</h2>
+    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">
+      {{ $fields['section_title'] ?? 'Let\'s Work Together' }}
+    </h2>
+    
     <p class="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
-      {{ $contact_description }}
+      {{ $fields['section_description'] ?? 'I\'m always interested in new opportunities and exciting projects. Whether you have a question or just want to say hi, feel free to reach out!' }}
     </p>
+    
     <div class="flex flex-col sm:flex-row justify-center gap-4">
-      <a href="mailto:{{ $contact_email }}"
-         class="bg-blue-600 dark:bg-blue-500 text-white px-8 py-3 rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors">
-        📧 Email Me
-      </a>
-      <a href="https://github.com/ahmedchouihi"
-         class="border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 px-8 py-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
-        🐙 GitHub
-      </a>
-      <a href="https://linkedin.com/in/ahmedchouihi"
-         class="border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 px-8 py-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
-        💼 LinkedIn
-      </a>
+      @if(!empty($fields['email']))
+        <a href="mailto:{{ $fields['email'] }}"
+           class="bg-blue-600 dark:bg-blue-500 text-white px-8 py-3 rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors">
+          📧 Email Me
+        </a>
+      @endif
+      
+      @if(isset($fields['social_links']) && is_array($fields['social_links']))
+        @foreach($fields['social_links'] as $link)
+          @if(is_array($link) && isset($link['url']) && !empty($link['url']))
+            <a href="{{ $link['url'] }}" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 px-8 py-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+              {{ $link['icon'] ?? '🔗' }} {{ $link['label'] ?? $link['platform'] }}
+            </a>
+          @endif
+        @endforeach
+      @endif
     </div>
     
     @if($show_contact_form)
