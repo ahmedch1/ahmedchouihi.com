@@ -23,6 +23,8 @@
     #mainContainer {
       background: linear-gradient(to bottom right, var(--bg-primary), var(--bg-secondary));
       color: var(--text-primary);
+      min-height: 100vh;
+      transition: all 0.3s ease;
     }
 
     .dark #mainContainer {
@@ -74,13 +76,33 @@
     .dark .bg-gray-700 {
       background-color: #374151 !important;
     }
+
+    /* Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Dark mode toggle animations */
+    #darkModeToggle {
+      transition: all 0.3s ease;
+    }
+
+    #darkModeToggle:hover {
+      transform: scale(1.1);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Icon transition animations */
+    #sunIcon, #moonIcon {
+      transition: all 0.3s ease;
+    }
   </style>
 
   <div
     class="portfolio-page-class min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300"
     id="mainContainer">
     
-    <!-- Dark Mode Toggle (always present) -->
+    <!-- Dark Mode Toggle -->
     @include('blocks.darkmode')
 
     <!-- Page Content using Gutenberg blocks -->
@@ -145,7 +167,6 @@
         const sunIcon = document.getElementById('sunIcon');
         const moonIcon = document.getElementById('moonIcon');
         const html = document.documentElement;
-
         const mainContainer = document.getElementById('mainContainer');
 
         if (!darkModeToggle || !sunIcon || !moonIcon) {
@@ -166,12 +187,14 @@
 
         // Function to apply dark mode styles manually if Tailwind fails
         function applyDarkModeStyles(isDark) {
-          if (isDark) {
-            mainContainer.style.background = 'linear-gradient(to bottom right, #111827, #1f2937)';
-            mainContainer.style.color = '#ffffff';
-          } else {
-            mainContainer.style.background = 'linear-gradient(to bottom right, #eff6ff, #e0e7ff)';
-            mainContainer.style.color = '#111827';
+          if (mainContainer) {
+            if (isDark) {
+              mainContainer.style.background = 'linear-gradient(to bottom right, #111827, #1f2937)';
+              mainContainer.style.color = '#ffffff';
+            } else {
+              mainContainer.style.background = 'linear-gradient(to bottom right, #eff6ff, #e0e7ff)';
+              mainContainer.style.color = '#111827';
+            }
           }
         }
 
@@ -184,6 +207,7 @@
           updateIconVisibility(true);
           applyDarkModeStyles(true);
         } else {
+          html.classList.remove('dark');
           updateIconVisibility(false);
           applyDarkModeStyles(false);
         }
@@ -206,10 +230,9 @@
           applyDarkModeStyles(isDark);
 
           console.log('Dark mode toggled:', isDark);
-          console.log('HTML classes:', html.className);
         });
 
-        // Add hover effect for better UX
+        // Add hover effects for better UX
         darkModeToggle.addEventListener('mouseenter', function () {
           this.style.transform = 'scale(1.1)';
         });
