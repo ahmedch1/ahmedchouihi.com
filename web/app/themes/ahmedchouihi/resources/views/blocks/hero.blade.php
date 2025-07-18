@@ -9,7 +9,7 @@ $secondary_button_text = $fields['secondary_button_text'] ?? 'View Projects';
 $secondary_button_link = $fields['secondary_button_link'] ?? '#projects';
 ?>
 
-<section class="py-20 px-4">
+<section class="py-20 px-4" id="hero-section">
   <div class="max-w-4xl mx-auto text-center">
     <div class="mb-8">
       <img src="{{ $avatar_image }}"
@@ -31,4 +31,4 @@ $secondary_button_link = $fields['secondary_button_link'] ?? '#projects';
       </a>
     </div>
   </div>
-</section> 
+</section>

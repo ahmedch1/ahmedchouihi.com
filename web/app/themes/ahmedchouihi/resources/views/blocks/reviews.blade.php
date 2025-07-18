@@ -25,12 +25,12 @@ $reviews = $fields['reviews'] ?? [
 ];
 ?>
 
-<section id="reviews" class="py-16 px-4">
+<section id="reviews-section" class="py-16 px-4">
   <div class="max-w-4xl mx-auto">
     <h2 class="text-3xl font-bold text-center text-gray-900 dark:text-white mb-12">
       {{ $fields['section_title'] ?? 'Client Reviews' }}
     </h2>
-    
+
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       @if(isset($fields['reviews']) && is_array($fields['reviews']))
         @foreach($fields['reviews'] as $review)
@@ -50,17 +50,17 @@ $reviews = $fields['reviews'] ?? [
                   ];
                   $colorClass = $colorClasses[$review['color'] ?? 'blue'] ?? $colorClasses['blue'];
                 @endphp
-                
+
                 <div class="w-12 h-12 {{ $colorClass }} rounded-full flex items-center justify-center mr-4">
                   <span class="font-semibold text-lg">{{ $review['initials'] ?? substr($review['name'], 0, 2) }}</span>
                 </div>
-                
+
                 <div>
                   <h4 class="font-semibold text-gray-900 dark:text-white">{{ $review['name'] }}</h4>
                   <p class="text-sm text-gray-600 dark:text-gray-400">{{ $review['position'] ?? '' }}</p>
                 </div>
               </div>
-              
+
               <div class="flex text-yellow-400 mb-3">
                 @for($i = 1; $i <= 5; $i++)
                   <svg class="w-5 h-5 fill-current {{ $i <= ($review['rating'] ?? 5) ? '' : 'text-gray-300 dark:text-gray-600' }}" viewBox="0 0 20 20">
@@ -68,7 +68,7 @@ $reviews = $fields['reviews'] ?? [
                   </svg>
                 @endfor
               </div>
-              
+
               <p class="text-gray-700 dark:text-gray-300 italic">"{{ $review['review'] ?? '' }}"</p>
             </div>
           @endif
@@ -76,4 +76,4 @@ $reviews = $fields['reviews'] ?? [
       @endif
     </div>
   </div>
-</section> 
+</section>

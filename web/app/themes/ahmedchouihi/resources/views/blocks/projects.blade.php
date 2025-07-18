@@ -40,7 +40,7 @@ $projects = $fields['projects'] ?? [
 ];
 ?>
 
-<section id="projects" class="py-16 px-4">
+<section id="projects-section" class="py-16 px-4">
   <div class="max-w-4xl mx-auto">
     <h2 class="text-3xl font-bold text-center text-gray-900 dark:text-white mb-12">{{ $section_title }}</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 project-grid">
@@ -67,4 +67,4 @@ $projects = $fields['projects'] ?? [
       @endforeach
     </div>
   </div>
-</section> 
+</section>

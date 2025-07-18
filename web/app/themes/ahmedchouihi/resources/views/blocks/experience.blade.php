@@ -37,12 +37,12 @@ $experiences = $fields['experiences'] ?? [
 ];
 ?>
 
-<section class="py-16 px-4">
+<section class="py-16 px-4" id="experience-section">
   <div class="max-w-4xl mx-auto">
     <h2 class="text-3xl font-bold text-center text-gray-900 dark:text-white mb-12">
       {{ $fields['section_title'] ?? 'Experience' }}
     </h2>
-    
+
     <div class="space-y-8">
       @if(isset($fields['experiences']) && is_array($fields['experiences']))
         @foreach($fields['experiences'] as $experience)
@@ -85,4 +85,4 @@ $experiences = $fields['experiences'] ?? [
       @endif
     </div>
   </div>
-</section> 
+</section>
