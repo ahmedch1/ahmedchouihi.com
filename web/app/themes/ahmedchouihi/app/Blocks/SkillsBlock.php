@@ -25,6 +25,10 @@ class SkillsBlock
                 'customClassName' => false,
             ],
             'attributes' => [
+                'display' => [
+                    'type' => 'boolean',
+                    'default' => true,
+                ],
                 'sectionTitle' => [
                     'type' => 'string',
                     'default' => 'Skills & Technologies',
@@ -62,6 +66,7 @@ class SkillsBlock
     {
         // Extract attributes with defaults
         $fields = [
+            'display' => $attributes['display'] ?? true,
             'section_title' => $attributes['sectionTitle'] ?? 'Skills & Technologies',
             'skills' => $attributes['skillsData'] ?? [
                 [

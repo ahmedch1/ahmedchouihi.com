@@ -1,5 +1,6 @@
 <?php
 
+$display = $fields['display'] ?? true;
 $section_title = $fields['section_title'] ?? 'Skills & Technologies';
 $skills        = $fields['skills'] ?? [
   [
@@ -13,13 +14,14 @@ $skills        = $fields['skills'] ?? [
     'skills' => ['JavaScript', 'React', 'Vue.js', 'HTML/CSS']
   ],
   [
-    'icon' => '��',
+    'icon' => '🚀',
     'title' => 'DevOps & Tools',
     'skills' => ['Docker', 'Git', 'Linux', 'AWS']
   ]
 ];
 ?>
 
+@if($display)
 <section id="skills-section" class="py-16 px-4 bg-white dark:bg-gray-800">
   <div class="max-w-4xl mx-auto">
     <h2 class="text-3xl font-bold text-center text-gray-900 dark:text-white mb-12">{{ $section_title }}</h2>
@@ -40,3 +42,4 @@ $skills        = $fields['skills'] ?? [
     </div>
   </div>
 </section>
+@endif

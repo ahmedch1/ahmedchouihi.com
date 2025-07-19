@@ -1,4 +1,5 @@
 <?php
+$display = $fields['display'] ?? true;
 $section_title = $fields['section_title'] ?? 'Featured Projects';
 $projects = $fields['projects'] ?? [
     [
@@ -40,6 +41,7 @@ $projects = $fields['projects'] ?? [
 ];
 ?>
 
+@if($display)
 <section id="projects-section" class="py-16 px-4">
   <div class="max-w-4xl mx-auto">
     <h2 class="text-3xl font-bold text-center text-gray-900 dark:text-white mb-12">{{ $section_title }}</h2>
@@ -68,3 +70,4 @@ $projects = $fields['projects'] ?? [
     </div>
   </div>
 </section>
+@endif

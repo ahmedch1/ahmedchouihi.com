@@ -25,6 +25,10 @@ class ExperienceBlock
                 'customClassName' => false,
             ],
             'attributes' => [
+                'display' => [
+                    'type' => 'boolean',
+                    'default' => true,
+                ],
                 'sectionTitle' => [
                     'type' => 'string',
                     'default' => 'Experience',
@@ -71,6 +75,7 @@ class ExperienceBlock
     {
         // Extract attributes with defaults
         $fields = [
+            'display' => $attributes['display'] ?? true,
             'section_title' => $attributes['sectionTitle'] ?? 'Experience',
             'experiences' => $attributes['experiences'] ?? [
                 [

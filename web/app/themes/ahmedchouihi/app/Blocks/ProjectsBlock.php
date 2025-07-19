@@ -25,6 +25,10 @@ class ProjectsBlock
                 'customClassName' => false,
             ],
             'attributes' => [
+                'display' => [
+                    'type' => 'boolean',
+                    'default' => true,
+                ],
                 'sectionTitle' => [
                     'type' => 'string',
                     'default' => 'Featured Projects',
@@ -83,6 +87,7 @@ class ProjectsBlock
     {
         // Extract attributes with defaults
         $fields = [
+            'display' => $attributes['display'] ?? true,
             'section_title' => $attributes['sectionTitle'] ?? 'Featured Projects',
             'projects' => $attributes['projectsData'] ?? [
                 [

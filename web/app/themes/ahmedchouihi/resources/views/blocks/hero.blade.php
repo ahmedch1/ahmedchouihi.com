@@ -1,4 +1,5 @@
 <?php
+$display = $fields['display'] ?? true;
 $name = $fields['name'] ?? 'Ahmed Chouihi';
 $title = $fields['title'] ?? 'Full-Stack PHP Developer';
 $description = $fields['description'] ?? 'Passionate PHP developer with expertise in Laravel, WordPress, and modern web technologies. I build robust, scalable applications that solve real-world problems.';
@@ -9,6 +10,7 @@ $secondary_button_text = $fields['secondary_button_text'] ?? 'View Projects';
 $secondary_button_link = $fields['secondary_button_link'] ?? '#projects';
 ?>
 
+@if($display)
 <section class="py-20 px-4" id="hero-section">
   <div class="max-w-4xl mx-auto text-center">
     <div class="mb-8">
@@ -32,3 +34,4 @@ $secondary_button_link = $fields['secondary_button_link'] ?? '#projects';
     </div>
   </div>
 </section>
+@endif

@@ -1,4 +1,5 @@
 <?php
+$display = $fields['display'] ?? true;
 $section_title = $fields['section_title'] ?? 'Gallery';
 $gallery_images = $fields['gallery_images'] ?? [];
 
@@ -39,6 +40,7 @@ $default_gallery = [
 $gallery_items = !empty($gallery_images) ? $gallery_images : $default_gallery;
 ?>
 
+@if($display)
 <section id="gallery-section" class="py-16 px-4 bg-white dark:bg-gray-800">
   <div class="max-w-6xl mx-auto">
     <h2 class="text-3xl font-bold text-center text-gray-900 dark:text-white mb-12">{{ $section_title }}</h2>
@@ -59,3 +61,4 @@ $gallery_items = !empty($gallery_images) ? $gallery_images : $default_gallery;
     </div>
   </div>
 </section>
+@endif

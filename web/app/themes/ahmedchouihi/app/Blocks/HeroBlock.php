@@ -25,6 +25,10 @@ class HeroBlock
                 'customClassName' => false,
             ],
             'attributes' => [
+                'display' => [
+                    'type' => 'boolean',
+                    'default' => true,
+                ],
                 'name' => [
                     'type' => 'string',
                     'default' => 'Ahmed Chouihi',
@@ -66,6 +70,7 @@ class HeroBlock
     {
         // Extract attributes with defaults
         $fields = [
+            'display'=>$attributes['display'] ?? true,
             'name' => $attributes['name'] ?? 'Ahmed Chouihi',
             'title' => $attributes['title'] ?? 'Full-Stack PHP Developer',
             'description' => $attributes['description'] ?? 'Passionate PHP developer with expertise in Laravel, WordPress, and modern web technologies. I build robust, scalable applications that solve real-world problems.',
@@ -86,4 +91,4 @@ class HeroBlock
         // Render the view
         return view('blocks.hero', $context)->render();
     }
-} 
+}

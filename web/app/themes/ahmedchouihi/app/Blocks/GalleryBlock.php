@@ -25,6 +25,10 @@ class GalleryBlock
                 'customClassName' => false,
             ],
             'attributes' => [
+                'display' => [
+                    'type' => 'boolean',
+                    'default' => true,
+                ],
                 'sectionTitle' => [
                     'type' => 'string',
                     'default' => 'Project Gallery',
@@ -77,6 +81,7 @@ class GalleryBlock
     {
         // Extract attributes with defaults
         $fields = [
+            'display' => $attributes['display'] ?? true,
             'section_title' => $attributes['sectionTitle'] ?? 'Project Gallery',
             'gallery_images' => $attributes['galleryImages'] ?? [
                 [

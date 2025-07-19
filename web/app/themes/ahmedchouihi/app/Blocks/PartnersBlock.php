@@ -25,6 +25,10 @@ class PartnersBlock
                 'customClassName' => false,
             ],
             'attributes' => [
+                'display' => [
+                    'type' => 'boolean',
+                    'default' => true,
+                ],
                 'sectionTitle' => [
                     'type' => 'string',
                     'default' => 'Proud to Collaborate With',
@@ -87,6 +91,7 @@ class PartnersBlock
     {
         // Extract attributes with defaults
         $fields = [
+            'display' => $attributes['display'] ?? true,
             'section_title' => $attributes['sectionTitle'] ?? 'Proud to Collaborate With',
             'section_description' => $attributes['sectionDescription'] ?? 'Collaboration in term of Freelancing, Full time ...Reach me for details',
             'partners' => $attributes['partners'] ?? [

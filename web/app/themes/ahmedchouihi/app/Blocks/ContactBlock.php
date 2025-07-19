@@ -25,6 +25,10 @@ class ContactBlock
                 'customClassName' => false,
             ],
             'attributes' => [
+                'display' => [
+                    'type' => 'boolean',
+                    'default' => true,
+                ],
                 'sectionTitle' => [
                     'type' => 'string',
                     'default' => 'Let\'s Work Together',
@@ -73,6 +77,7 @@ class ContactBlock
     {
         // Extract attributes with defaults
         $fields = [
+            'display' => $attributes['display'] ?? true,
             'section_title' => $attributes['sectionTitle'] ?? 'Let\'s Work Together',
             'section_description' => $attributes['sectionDescription'] ?? 'I\'m always interested in new opportunities and exciting projects. Whether you have a question or just want to say hi, feel free to reach out!',
             'email' => $attributes['email'] ?? 'ahmed@example.com',

@@ -1,4 +1,5 @@
 <?php
+$display = $fields['display'] ?? true;
 $section_title = $fields['section_title'] ?? 'Proud to Collaborate With';
 $partners = $fields['partners'] ?? [
     ['name' => 'ShyrineProd', 'logo' => '', 'url' => '#'],
@@ -10,6 +11,7 @@ $partners = $fields['partners'] ?? [
 ];
 ?>
 
+@if($display)
 <section id="partners-section" class="py-16 px-4 bg-white dark:bg-gray-800">
   <div class="max-w-6xl mx-auto">
     <h2 class="text-3xl font-bold text-center text-gray-900 dark:text-white mb-12">
@@ -48,3 +50,4 @@ $partners = $fields['partners'] ?? [
     </div>
   </div>
 </section>
+@endif

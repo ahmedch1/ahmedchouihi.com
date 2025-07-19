@@ -1,4 +1,5 @@
 <?php
+$display = $fields['display'] ?? true;
 $section_title = $fields['section_title'] ?? 'Let\'s Work Together';
 $contact_description = $fields['contact_description'] ?? 'I\'m always interested in new opportunities and exciting projects. Whether you have a question or just want to say hi, feel free to reach out!';
 $contact_email = $fields['contact_email'] ?? 'ahmed@example.com';
@@ -6,6 +7,7 @@ $contact_phone = $fields['contact_phone'] ?? '';
 $show_contact_form = $fields['show_contact_form'] ?? false;
 ?>
 
+@if($display)
 <section id="contact-section" class="py-16 px-4 bg-white dark:bg-gray-800">
   <div class="max-w-4xl mx-auto text-center">
     <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">
@@ -58,3 +60,4 @@ $show_contact_form = $fields['show_contact_form'] ?? false;
     @endif
   </div>
 </section>
+@endif
