@@ -95,7 +95,7 @@ html {
   .hero-title {
     font-size: 2.5rem;
   }
-  
+
   .project-grid {
     grid-template-columns: 1fr;
   }
@@ -182,6 +182,7 @@ html {
   border-radius: 0.5rem;
   transition: all 0.3s ease;
   position: relative;
+  margin-right: 1.5rem;
 }
 
 .dark .nav-primary .nav a {
