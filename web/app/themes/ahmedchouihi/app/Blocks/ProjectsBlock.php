@@ -40,37 +40,43 @@ class ProjectsBlock
                             'icon' => '🚀',
                             'title' => 'E-Commerce Platform',
                             'description' => 'A full-featured e-commerce solution built with Laravel, featuring user authentication, payment processing, and admin dashboard.',
+                            'backgroundType' => 'gradient',
+                            'gradient' => 'from-blue-400 to-purple-500',
+                            'screenshot' => '',
                             'technologies' => [
                                 ['technology' => 'Laravel'],
                                 ['technology' => 'MySQL'],
                                 ['technology' => 'Vue.js']
                             ],
-                            'link' => '#',
-                            'gradient' => 'from-blue-400 to-purple-500'
+                            'link' => '#'
                         ],
                         [
                             'icon' => '📱',
                             'title' => 'Task Management App',
                             'description' => 'A collaborative task management application with real-time updates, team collaboration, and progress tracking.',
+                            'backgroundType' => 'gradient',
+                            'gradient' => 'from-green-400 to-blue-500',
+                            'screenshot' => '',
                             'technologies' => [
                                 ['technology' => 'PHP'],
                                 ['technology' => 'Redis'],
                                 ['technology' => 'WebSocket']
                             ],
-                            'link' => '#',
-                            'gradient' => 'from-green-400 to-blue-500'
+                            'link' => '#'
                         ],
                         [
                             'icon' => '🌐',
                             'title' => 'WordPress Theme',
                             'description' => 'Custom WordPress theme with modern design, SEO optimization, and advanced customization options.',
+                            'backgroundType' => 'gradient',
+                            'gradient' => 'from-purple-400 to-pink-500',
+                            'screenshot' => '',
                             'technologies' => [
                                 ['technology' => 'WordPress'],
                                 ['technology' => 'PHP'],
                                 ['technology' => 'Tailwind']
                             ],
-                            'link' => '#',
-                            'gradient' => 'from-purple-400 to-pink-500'
+                            'link' => '#'
                         ]
                     ],
                 ],
@@ -94,37 +100,43 @@ class ProjectsBlock
                     'icon' => '🚀',
                     'title' => 'E-Commerce Platform',
                     'description' => 'A full-featured e-commerce solution built with Laravel, featuring user authentication, payment processing, and admin dashboard.',
+                    'backgroundType' => 'gradient',
+                    'gradient' => 'from-blue-400 to-purple-500',
+                    'screenshot' => '',
                     'technologies' => [
                         ['technology' => 'Laravel'],
                         ['technology' => 'MySQL'],
                         ['technology' => 'Vue.js']
                     ],
-                    'link' => '#',
-                    'gradient' => 'from-blue-400 to-purple-500'
+                    'link' => '#'
                 ],
                 [
                     'icon' => '📱',
                     'title' => 'Task Management App',
                     'description' => 'A collaborative task management application with real-time updates, team collaboration, and progress tracking.',
+                    'backgroundType' => 'gradient',
+                    'gradient' => 'from-green-400 to-blue-500',
+                    'screenshot' => '',
                     'technologies' => [
                         ['technology' => 'PHP'],
                         ['technology' => 'Redis'],
                         ['technology' => 'WebSocket']
                     ],
-                    'link' => '#',
-                    'gradient' => 'from-green-400 to-blue-500'
+                    'link' => '#'
                 ],
                 [
                     'icon' => '🌐',
                     'title' => 'WordPress Theme',
                     'description' => 'Custom WordPress theme with modern design, SEO optimization, and advanced customization options.',
+                    'backgroundType' => 'gradient',
+                    'gradient' => 'from-purple-400 to-pink-500',
+                    'screenshot' => '',
                     'technologies' => [
                         ['technology' => 'WordPress'],
                         ['technology' => 'PHP'],
                         ['technology' => 'Tailwind']
                     ],
-                    'link' => '#',
-                    'gradient' => 'from-purple-400 to-pink-500'
+                    'link' => '#'
                 ]
             ],
         ];

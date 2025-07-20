@@ -6,37 +6,43 @@ $projects = $fields['projects'] ?? [
         'icon' => '🚀',
         'title' => 'E-Commerce Platform',
         'description' => 'A full-featured e-commerce solution built with Laravel, featuring user authentication, payment processing, and admin dashboard.',
+        'backgroundType' => 'gradient',
+        'gradient' => 'from-blue-400 to-purple-500',
+        'screenshot' => '',
         'technologies' => [
             ['technology' => 'Laravel'],
             ['technology' => 'MySQL'],
             ['technology' => 'Vue.js']
         ],
-        'link' => '#',
-        'gradient' => 'from-blue-400 to-purple-500'
+        'link' => '#'
     ],
     [
         'icon' => '📱',
         'title' => 'Task Management App',
         'description' => 'A collaborative task management application with real-time updates, team collaboration, and progress tracking.',
+        'backgroundType' => 'gradient',
+        'gradient' => 'from-green-400 to-blue-500',
+        'screenshot' => '',
         'technologies' => [
             ['technology' => 'PHP'],
             ['technology' => 'Redis'],
             ['technology' => 'WebSocket']
         ],
-        'link' => '#',
-        'gradient' => 'from-green-400 to-blue-500'
+        'link' => '#'
     ],
     [
         'icon' => '🌐',
         'title' => 'WordPress Theme',
         'description' => 'Custom WordPress theme with modern design, SEO optimization, and advanced customization options.',
+        'backgroundType' => 'gradient',
+        'gradient' => 'from-purple-400 to-pink-500',
+        'screenshot' => '',
         'technologies' => [
             ['technology' => 'WordPress'],
             ['technology' => 'PHP'],
             ['technology' => 'Tailwind']
         ],
-        'link' => '#',
-        'gradient' => 'from-purple-400 to-pink-500'
+        'link' => '#'
     ]
 ];
 ?>
@@ -48,8 +54,18 @@ $projects = $fields['projects'] ?? [
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 project-grid">
       @foreach($projects as $project)
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden project-card">
-        <div class="h-48 bg-gradient-to-r {{ $project['gradient'] }} flex items-center justify-center">
-          <span class="text-white text-4xl">{{ $project['icon'] }}</span>
+        <div class="h-48 flex items-center justify-center
+             @if(($project['backgroundType'] ?? 'gradient') === 'image' && !empty($project['screenshot'] ?? ''))
+               bg-cover bg-center
+             @else
+               bg-gradient-to-r {{ $project['gradient'] ?? 'from-blue-400 to-purple-500' }}
+             @endif"
+             @if(($project['backgroundType'] ?? 'gradient') === 'image' && !empty($project['screenshot'] ?? ''))
+               style="background-image: url('{{ $project['screenshot'] }}');"
+             @endif>
+          @if(($project['backgroundType'] ?? 'gradient') !== 'image' || empty($project['screenshot'] ?? ''))
+            <span class="text-white text-4xl">{{ $project['icon'] ?? '🚀' }}</span>
+          @endif
         </div>
         <div class="p-6">
           <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">{{ $project['title'] }}</h3>
