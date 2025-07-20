@@ -9,6 +9,7 @@ use App\Blocks\ReviewsBlock;
 use App\Blocks\PartnersBlock;
 use App\Blocks\ExperienceBlock;
 use App\Blocks\ContactBlock;
+use App\Blocks\CredlyBlock;
 
 /**
  * Register custom block category
@@ -36,6 +37,7 @@ add_action('init', function() {
         new PartnersBlock(),
         new ExperienceBlock(),
         new ContactBlock(),
+        new CredlyBlock(),
     ];
 
     foreach ($blocks as $block) {
@@ -58,6 +60,7 @@ add_action('enqueue_block_editor_assets', function() {
         'partners' => 'portfolio-partners-block',
         'experience' => 'portfolio-experience-block',
         'contact' => 'portfolio-contact-block',
+        'credly' => 'portfolio-credly-block',
     ];
 
     foreach ($blocks as $block => $handle) {
