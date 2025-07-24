@@ -29,9 +29,21 @@ class LanguagesBlock
                     'type' => 'boolean',
                     'default' => true,
                 ],
+                'showLanguages' => [
+                    'type' => 'boolean',
+                    'default' => true,
+                ],
+                'showFrameworks' => [
+                    'type' => 'boolean',
+                    'default' => true,
+                ],
+                'showCMS' => [
+                    'type' => 'boolean',
+                    'default' => true,
+                ],
                 'sectionTitle' => [
                     'type' => 'string',
-                    'default' => 'Languages',
+                    'default' => 'Technical Skills',
                 ],
                 'programmingLanguagesData' => [
                     'type' => 'array',
@@ -40,19 +52,50 @@ class LanguagesBlock
                             'name' => 'PHP',
                             'level' => 'Expert',
                             'percentage' => 95,
-                            'color' => '#777BB4'
+                            'color' => '#777BB4',
+                            'category' => 'language'
                         ],
                         [
                             'name' => 'JavaScript',
                             'level' => 'Advanced',
                             'percentage' => 85,
-                            'color' => '#F7DF1E'
+                            'color' => '#F7DF1E',
+                            'category' => 'language'
                         ],
                         [
                             'name' => 'SQL',
                             'level' => 'Advanced',
                             'percentage' => 90,
-                            'color' => '#336791'
+                            'color' => '#336791',
+                            'category' => 'language'
+                        ],
+                        [
+                            'name' => 'Laravel',
+                            'level' => 'Expert',
+                            'percentage' => 90,
+                            'color' => '#FF2D20',
+                            'category' => 'framework'
+                        ],
+                        [
+                            'name' => 'React',
+                            'level' => 'Advanced',
+                            'percentage' => 80,
+                            'color' => '#61DAFB',
+                            'category' => 'framework'
+                        ],
+                        [
+                            'name' => 'WordPress',
+                            'level' => 'Expert',
+                            'percentage' => 95,
+                            'color' => '#21759B',
+                            'category' => 'cms'
+                        ],
+                        [
+                            'name' => 'Drupal',
+                            'level' => 'Intermediate',
+                            'percentage' => 70,
+                            'color' => '#0678BE',
+                            'category' => 'cms'
                         ]
                     ],
                 ],
@@ -90,28 +133,62 @@ class LanguagesBlock
         // Extract attributes with defaults
         $fields = [
             'display' => $attributes['display'] ?? true,
-            'section_title' => $attributes['sectionTitle'] ?? 'Languages',
-            'programming_languages' => $attributes['programmingLanguagesData'] ?? [
+            'show_languages' => $attributes['showLanguages'] ?? true,
+            'show_frameworks' => $attributes['showFrameworks'] ?? true,
+            'show_cms' => $attributes['showCMS'] ?? true,
+            'section_title' => $attributes['sectionTitle'] ?? 'Technical Skills',
+            'programming_languages_data' => $attributes['programmingLanguagesData'] ?? [
                 [
                     'name' => 'PHP',
                     'level' => 'Expert',
                     'percentage' => 95,
-                    'color' => '#777BB4'
+                    'color' => '#777BB4',
+                    'category' => 'language'
                 ],
                 [
                     'name' => 'JavaScript',
                     'level' => 'Advanced',
                     'percentage' => 85,
-                    'color' => '#F7DF1E'
+                    'color' => '#F7DF1E',
+                    'category' => 'language'
                 ],
                 [
                     'name' => 'SQL',
                     'level' => 'Advanced',
                     'percentage' => 90,
-                    'color' => '#336791'
+                    'color' => '#336791',
+                    'category' => 'language'
+                ],
+                [
+                    'name' => 'Laravel',
+                    'level' => 'Expert',
+                    'percentage' => 90,
+                    'color' => '#FF2D20',
+                    'category' => 'framework'
+                ],
+                [
+                    'name' => 'React',
+                    'level' => 'Advanced',
+                    'percentage' => 80,
+                    'color' => '#61DAFB',
+                    'category' => 'framework'
+                ],
+                [
+                    'name' => 'WordPress',
+                    'level' => 'Expert',
+                    'percentage' => 95,
+                    'color' => '#21759B',
+                    'category' => 'cms'
+                ],
+                [
+                    'name' => 'Drupal',
+                    'level' => 'Intermediate',
+                    'percentage' => 70,
+                    'color' => '#0678BE',
+                    'category' => 'cms'
                 ]
             ],
-            'languages' => $attributes['humanLanguagesData'] ?? [
+            'human_languages_data' => $attributes['humanLanguagesData'] ?? [
                 [
                     'language' => 'Arabic',
                     'level' => 'Native',

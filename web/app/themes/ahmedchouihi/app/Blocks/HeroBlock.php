@@ -74,7 +74,7 @@ class HeroBlock
             'name' => $attributes['name'] ?? 'Ahmed Chouihi',
             'title' => $attributes['title'] ?? 'Full-Stack PHP Developer',
             'description' => $attributes['description'] ?? 'Passionate PHP developer with expertise in Laravel, WordPress, and modern web technologies. I build robust, scalable applications that solve real-world problems.',
-            'avatar_image' => get_theme_file_uri('resources/images/avatar.jpg'),
+            'avatar_image' => $attributes['avatar_image'] ?? get_theme_mod('hero_avatar_image', get_theme_file_uri('resources/images/avatar.jpg')),
             'primary_button_text' => $attributes['primaryButtonText'] ?? 'Get In Touch',
             'primary_button_link' => $attributes['primaryButtonLink'] ?? '#contact',
             'secondary_button_text' => $attributes['secondaryButtonText'] ?? 'View Projects',

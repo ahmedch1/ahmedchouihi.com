@@ -153,3 +153,29 @@ add_action('widgets_init', function () {
         'id' => 'sidebar-footer',
     ] + $config);
 });
+
+/**
+ * Add Customizer setting for hero avatar image
+ */
+add_action('customize_register', function($wp_customize) {
+    $wp_customize->add_section('hero_section', [
+        'title'    => __('Hero Section', 'sage'),
+        'priority' => 30,
+    ]);
+
+    $wp_customize->add_setting('hero_avatar_image', [
+        'default'           => get_template_directory_uri() . '/resources/images/avatar.jpg',
+        'sanitize_callback' => 'esc_url_raw',
+        'transport'         => 'refresh',
+    ]);
+
+    $wp_customize->add_control(new \WP_Customize_Image_Control(
+        $wp_customize,
+        'hero_avatar_image',
+        [
+            'label'    => __('Hero Avatar Image', 'sage'),
+            'section'  => 'hero_section',
+            'settings' => 'hero_avatar_image',
+        ]
+    ));
+});
