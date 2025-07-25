@@ -34,7 +34,7 @@ $carousel_id = 'credly-carousel-' . uniqid();
                 <img src="{{ $badge['image'] ?? '' }}" 
                      alt="{{ $badge['title'] ?? 'Certification Badge' }}"
                      class="w-24 h-24 mx-auto rounded-lg object-cover shadow-md"
-                     onerror="this.style.display='none'">
+                     onerror="this.style.display='none'" loading="lazy">
               </div>
               <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2 line-clamp-2">
                 {{ $badge['title'] ?? 'Certificate Title' }}

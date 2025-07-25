@@ -17,7 +17,7 @@ $secondary_button_link = $fields['secondary_button_link'] ?? '#projects';
       <img src="{{ $avatar_image }}"
            alt="{{ $name }}"
            class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-white dark:border-gray-700 shadow-lg"
-           onerror="this.style.display='none'">
+           onerror="this.style.display='none'" loading="lazy">
     </div>
     <h1 class="text-5xl font-bold text-gray-900 dark:text-white mb-4 hero-title">{{ $name }}</h1>
     <p class="text-xl text-gray-600 dark:text-gray-300 mb-6">{{ $title }}</p>

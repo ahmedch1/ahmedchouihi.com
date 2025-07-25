@@ -34,6 +34,7 @@ $partners = $fields['partners'] ?? [
                     alt="{{ $partner['name'] }}"
                     class="w-24 h-16 object-contain"
                     title="{{ $partner['description'] ?? $partner['name'] }}"
+                    loading="lazy"
                   >
                 </a>
               @else

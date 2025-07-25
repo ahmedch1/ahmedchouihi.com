@@ -49,7 +49,7 @@ $gallery_items = !empty($gallery_images) ? $gallery_images : $default_gallery;
       <div class="group relative overflow-hidden rounded-lg shadow-lg gallery-item">
         <img src="{{ $item['image'] }}"
              alt="{{ $item['title'] }}"
-             class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+             class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110" loading="lazy">
         <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
           <div class="text-center text-white">
             <h3 class="text-xl font-semibold mb-2">{{ $item['title'] }}</h3>
