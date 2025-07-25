@@ -110,11 +110,11 @@ $all_categories = [
                                 <div class="flex items-center justify-between mb-4">
                                     <div class="flex items-center space-x-3">
                                         <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background-color: {{ $skill['color'] ?? '#6b7280' }}">
-                                            <span class="text-white font-bold text-lg">{{ substr($skill['name'] ?? '', 0, 2) }}</span>
+                                            <span class="text-blue-900 font-bold text-lg">{{ substr($skill['name'] ?? '', 0, 2) }}</span>
                                         </div>
                                         <h4 class="text-lg font-semibold text-gray-900 dark:text-white">{{ $skill['name'] ?? 'Unnamed Skill' }}</h4>
                                     </div>
-                                    <span class="text-sm font-medium" style="color: {{ $skill['color'] ?? '#6b7280' }}">{{ $skill['level'] ?? 'N/A' }}</span>
+                                    <span class="text-sm font-medium" style="color: #1e293b">{{ $skill['level'] ?? 'N/A' }}</span>
                                 </div>
                                 <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                                     <div class="h-2 rounded-full transition-all duration-500" 
@@ -138,7 +138,7 @@ $all_categories = [
               <div class="flex items-center justify-between mb-4">
                 <div class="flex items-center space-x-3">
                   <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
-                    <span class="text-white font-bold text-sm">🌐</span>
+                    <span class="text-blue-900 font-bold text-sm">🌐</span>
                   </div>
                   <h4 class="text-lg font-semibold text-gray-900 dark:text-white">{{ $language['language'] ?? 'Unknown Language' }}</h4>
                 </div>

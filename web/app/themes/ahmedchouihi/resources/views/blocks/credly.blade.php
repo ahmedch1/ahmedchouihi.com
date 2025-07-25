@@ -49,7 +49,7 @@ $carousel_id = 'credly-carousel-' . uniqid();
               <a href="{{ $badge['credentialUrl'] }}" 
                  target="_blank" 
                  rel="noopener noreferrer"
-                 class="inline-block bg-blue-600 hover:bg-blue-700 text-white text-sm px-4 py-2 rounded-lg transition-colors duration-200">
+                 class="inline-block bg-blue-300 dark:bg-blue-700 text-blue-900 dark:text-white text-sm px-4 py-2 rounded-lg transition-colors duration-200">
                 View Credential
               </a>
               @endif

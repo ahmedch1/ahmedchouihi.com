@@ -73,13 +73,13 @@ $projects = $fields['projects'] ?? [
           <div class="flex flex-wrap gap-2 mb-4">
             @if(isset($project['technologies']) && is_array($project['technologies']))
               @foreach($project['technologies'] as $tech)
-                <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-sm rounded-full">
+                <span class="px-3 py-1 bg-blue-100 dark:bg-blue-800 text-blue-900 dark:text-blue-100 text-sm rounded-full">
                   {{ is_array($tech) ? ($tech['technology'] ?? $tech) : $tech }}
                 </span>
               @endforeach
             @endif
           </div>
-          <a href="{{ $project['link'] }}" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium">View Project →</a>
+          <a href="{{ $project['link'] }}" class="text-blue-800 dark:text-blue-200 hover:text-blue-900 dark:hover:text-white font-medium">View Project →</a>
         </div>
       </div>
       @endforeach
