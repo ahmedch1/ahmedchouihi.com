@@ -62,13 +62,13 @@ $carousel_id = 'credly-carousel-' . uniqid();
       <!-- Navigation Arrows -->
       @if(count($badges) > $carousel_settings['slidesToShow'])
       <button class="credly-prev absolute left-0 top-1/2 transform -translate-y-1/2 bg-white dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 text-gray-800 dark:text-white p-2 rounded-full shadow-lg transition-colors duration-200 z-10" 
-              onclick="moveCredlyCarousel('{{ $carousel_id }}', -1)">
+              onclick="moveCredlyCarousel('{{ $carousel_id }}', -1)" aria-label="Previous badges">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
         </svg>
       </button>
       <button class="credly-next absolute right-0 top-1/2 transform -translate-y-1/2 bg-white dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 text-gray-800 dark:text-white p-2 rounded-full shadow-lg transition-colors duration-200 z-10" 
-              onclick="moveCredlyCarousel('{{ $carousel_id }}', 1)">
+              onclick="moveCredlyCarousel('{{ $carousel_id }}', 1)" aria-label="Next badges">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
         </svg>
@@ -80,7 +80,7 @@ $carousel_id = 'credly-carousel-' . uniqid();
       <div class="flex justify-center mt-6 space-x-2">
         @for($i = 0; $i < ceil(count($badges) / $carousel_settings['slidesToShow']); $i++)
         <button class="credly-dot w-3 h-3 rounded-full bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500 transition-colors duration-200 {{ $i === 0 ? 'bg-blue-600 dark:bg-blue-400' : '' }}"
-                onclick="goToCredlySlide('{{ $carousel_id }}', {{ $i }})">
+                onclick="goToCredlySlide('{{ $carousel_id }}', {{ $i }})" aria-label="Go to badge slide {{ $i + 1 }}">
         </button>
         @endfor
       </div>

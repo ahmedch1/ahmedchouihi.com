@@ -64,7 +64,7 @@ $projects = $fields['projects'] ?? [
                style="background-image: url('{{ $project['screenshot'] }}');"
              @endif>
           @if(($project['backgroundType'] ?? 'gradient') !== 'image' || empty($project['screenshot'] ?? ''))
-            <span class="text-white text-4xl">{{ $project['icon'] ?? '🚀' }}</span>
+            <span class="text-blue-900 dark:text-white text-4xl">{{ $project['icon'] ?? '🚀' }}</span>
           @endif
         </div>
         <div class="p-6">

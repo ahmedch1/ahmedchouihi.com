@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ trim(strip_tags($meta_description ?? ($meta_description = get_the_excerpt() ?: 'Ahmed Chouihi - Full-Stack PHP Developer portfolio. Explore projects, skills, certifications, and contact information.'))) }}">
     @php(do_action('get_header'))
     @php(wp_head())
 
